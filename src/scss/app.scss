@@ -1,0 +1,62 @@
+@import '../scss/libs/variables';
+@import '../scss/libs/normalize';
+
+.wrapper {
+	margin-top: 20px;
+}
+
+.container {
+	max-width: 810px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.header {
+	padding: $box-padding;
+	background-color: rgba(48, 165, 255, 0.471);
+	border-radius: 15px;
+	box-shadow: $box-shadow;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.main__wrap {
+	display: flex;
+	margin-top: 15px;
+	padding: $box-padding;
+	background-color: rgba(48, 165, 255, 0.856);
+	border-radius: 15px;
+	box-shadow: $box-shadow;
+
+	&-left,
+	&-right {
+		display: flex;
+		flex: 1 1 50%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&-left {
+		text-decoration: underline;
+	}
+
+	&-right {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.weekly__weather {
+		display: flex;
+		gap: 5px;
+		.forecast__day {
+
+		}
+	}
+
+
+
+}

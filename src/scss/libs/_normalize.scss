@@ -1,0 +1,34 @@
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  font-family: 'Nunito', Roboto, system-ui, Tahoma, sans-serif;
+  outline: none;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+ul,
+ol,
+li {
+	list-style-type: none;
+}
+
+body {
+	background-color: rgba(218, 239, 255, 0.956);
+}
