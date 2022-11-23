@@ -5,28 +5,18 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
-        <div className="container">
-          <div className="header">
-            <div className="header__top">
-              <a href="/" className="logo">
-                <h1>Weather App v. 1.0</h1>
-              </a>
-            </div>
+        <div class="container">
+          <div class="header">
+            <div class="header__top"></div>
+            <div class="header__menu"></div>
           </div>
-          <div className="main__wrap">
-            <div className="main__wrap-left">123</div>
-            <div className="main__wrap-right">
-              <div className="weater__info">
-                <h2>Lalala</h2>
-              </div>
-              <ul className="weekly__weather">
-                <li className="forecast__day">Monday</li>
-                <li className="forecast__day">Tuesday</li>
-                <li className="forecast__day">Wednesday</li>
-                <li className="forecast__day">Thirsday</li>
-                <li className="forecast__day">Friday</li>
-              </ul>
-            </div>
+          <div class="main">
+            <div class="main__top"></div>
+            <div class="main__content"></div>
+          </div>
+          <div class="right">
+            <div class="right__title"></div>
+            <div class="right__content"></div>
           </div>
         </div>
       </div>
