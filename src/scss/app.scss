@@ -2,7 +2,9 @@
 @import '../scss/libs/normalize';
 
 .wrapper {
+	position: relative;
 	margin-top: 20px;
+	z-index: 0;
 }
 
 .container {  
@@ -12,7 +14,7 @@
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px 10px;
+  gap: 15px 15px;
   grid-auto-flow: row;
   grid-template-areas:
     "header header header"
@@ -21,13 +23,16 @@
 }
 
 .header {
+	outline: 1px dashed $light-blue;
+	outline-offset: -6px;
+	position: relative;
 	padding: $box-padding;
 	background-color: rgba(48, 165, 255, 0.471);
-	border-radius: 15px;
+	border-radius: $border-radius;
 	box-shadow: $box-shadow; 
 	display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -35,22 +40,98 @@
     "header__top header__top header__top"
     "header__menu header__menu header__menu";
   grid-area: header;
+	z-index: 30;
+
+	&::after {
+		position: absolute;
+		top: 130px;
+		left: 0;
+		height: 150px;
+		width: 150px;
+		background-color: #fff;
+		border-radius: $border-radius;
+		content: '';
+		z-index: 200;
+		transform: translate(-80px, 50%) rotate(33deg);
+		opacity: 0.7;
+		box-shadow: $box-shadow;
+	}
+
+	&::before {
+		position: absolute;
+		top: 100px;
+		right: 0;
+		height: 200px;
+		width: 200px;
+		background-color: #fff;
+		border-radius: $border-radius;
+		content: '';
+		z-index: 200;
+		transform: translate(90px, 50%) rotate(15deg);
+		opacity: 0.7;
+		box-shadow: $box-shadow;
+	}
+
+
+
+	&__top {
+		position: relative;
+		grid-area: header__top;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px dashed $light-blue;
+		z-index: 50;
+	}
+
+	&__menu {
+		grid-area: header__menu;
+		margin-top: 4px;
+		align-items: center;
+
+		&-list {
+			display: flex;
+			justify-content: flex-end;
+
+			li:not(:first-child) {
+				margin-left: 10px;
+			}
+			a {
+				font-weight: 500;
+				display: inline-block;
+				padding: 5px 	30px;
+				border-radius: 10px;
+				transition: all .25s ease-in-out;
+
+				&:hover {
+					background-color: $light-blue;
+					box-shadow: $box-shadow; 
+				}
+
+				&:active {
+					box-shadow: none;
+				}
+			}
+
+		}
+	}
 }
 
-.header__top { grid-area: header__top; }
-
-.header__menu { grid-area: header__menu; }
 
 .main {
+	outline: 1px dashed $light-blue;
+	outline-offset: -6px;
+	position: relative;
 	padding: $box-padding;
 	background-color: rgba(48, 165, 255, 0.856);
-	border-radius: 15px;
+	border-radius: $border-radius;
 	box-shadow: $box-shadow;
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 1.5fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
+	z-index: 50;
   grid-template-areas:
     "main__top main__top main__top"
     "main__content main__content main__content"
@@ -67,27 +148,30 @@
 }
 
 .right {
+	position: relative;
+	outline: 1px dashed $light-blue;
+	outline-offset: -6px;
 	padding: $box-padding;
 	background-color: rgba(48, 165, 255, 0.856);
-	border-radius: 15px;
+	border-radius: $border-radius;
 	box-shadow: $box-shadow;
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 1.5fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
+	z-index: 50;
   grid-template-areas:
     "right__title right__title right__title"
     "right__content right__content right__content"
     "right__content right__content right__content";
   grid-area: right;
-}
 
-.right__title { 
-	grid-area: right__title; 
-}
+	&__title { 
+		grid-area: right__title; 
+	}
 
-.right__content {
-	grid-area: right__content; 
+	&__content {
+		grid-area: right__content; 
+	}
 }
-
