@@ -1,0 +1,65 @@
+@import '../../scss/libs/variables';
+
+.header {
+	outline: 1px dashed $light-blue;
+	outline-offset: -6px;
+	position: relative;
+	padding: $box-padding;
+	background-color: rgba(48, 165, 255, 0.471);
+	border-radius: $border-radius;
+	box-shadow: $box-shadow; 
+	display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+	align-self: flex-start;
+  grid-template-areas:
+    "header__top header__top header__top"
+    "header__top header__top header__top"
+    "header__menu header__menu header__menu";
+  grid-area: header;
+	z-index: 30;
+
+	&__top {
+		position: relative;
+		grid-area: header__top;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px dashed $light-blue;
+		z-index: 50;
+	}
+
+	&__menu {
+		grid-area: header__menu;
+		margin-top: 4px;
+		align-items: center;
+
+		&_list {
+			display: flex;
+			justify-content: flex-end;
+
+			li:not(:first-child) {
+				margin-left: 10px;
+			}
+			a {
+				font-weight: 500;
+				display: inline-block;
+				padding: 5px 	30px;
+				border-radius: 10px;
+				transition: all .25s ease-in-out;
+
+				&:hover {
+					background-color: $light-blue;
+					box-shadow: $box-shadow; 
+				}
+
+				&:active {
+					box-shadow: none;
+				}
+			}
+
+		}
+	}
+}

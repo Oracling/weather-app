@@ -1,0 +1,31 @@
+@import '../../scss/libs/variables';
+
+.right {
+	position: relative;
+	outline: 1px dashed $light-blue;
+	outline-offset: -6px;
+	padding: $box-padding;
+	background-color: rgba(48, 165, 255, 0.856);
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+	align-content: flex-start;
+	z-index: 50;
+  grid-template-areas:
+    "right__title right__title right__title"
+    "right__content right__content right__content"
+    "right__content right__content right__content";
+  grid-area: right;
+
+	&__title { 
+		grid-area: right__title; 
+	}
+
+	&__content {
+		grid-area: right__content; 
+	}
+}
