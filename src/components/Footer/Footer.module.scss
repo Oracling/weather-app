@@ -1,0 +1,13 @@
+@import '../../scss/libs/variables';
+
+.footer {
+	position: relative;
+	bottom: 0;
+	padding: 30px;
+	margin: 30px 0px 0px 0px;
+	width: 100%;
+	background-color: rgba(48, 165, 255, 0.856);
+	border-radius: 15px 15px 0 0;
+	display: flex;
+	justify-content: space-between;
+}
